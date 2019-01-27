@@ -1,0 +1,30 @@
+.bg-bl {
+  background-color: '#2196f3',
+}
+
+.df__center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.jumbotron__logo {
+  display: flex;
+  justify-content: center;
+}
+
+.jumbotron__logo img {
+  margin-top: 10px;
+}
+
+.__middle {
+  height: 100vh;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}

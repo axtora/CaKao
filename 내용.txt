@@ -1,0 +1,45 @@
+CaKao는 call + kakao의 약자로 
+특정사이트에서 유저들이 원하는 게시글이나 댓글을 올리면
+카카오톡 알람으로 몇 시 몇분에 글을올렸고 해당링크와 그 그 글의 내용을 보여주는 프로젝트 입니다. 
+
+
+1. caKao 플러스 친구를 함
+
+2. 유저가 원하는 게시글 링크를 첨부함.
+
+3. 그 게시글에서 알람을 받고 싶은 단어를 고름
+
+4. 그 후 카카오톡 플러스친구로 상황을 보여줌 (제목, 링크, 시간)
+
+
+네이티브 앱 키
+11774bea5cff0ae80edba838b90b2d7e
+REST API 키
+3c5c47d71cd8a268fc3b60bfea3db9d7
+JavaScript 키
+a3105df3959c5d1e8ba3d043f441a4a4
+Admin 키
+7d11c83096218091665cdf08554ff555
+
+
+AccessToken
+h2xZYExWzsp1MHrguQG7LyQauqtvuUJJ4H7LnQo8BhkAAAFoaiN7cA
+
+
+<script>
+  window.kakaoAsyncInit = function () {
+    Kakao.init('a3105df3959c5d1e8ba3d043f441a4a4');
+    Kakao.PlusFriend.createAddFriendButton({
+      container: '#plusfriend-add-button'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//developers.kakao.com/sdk/js/kakao.plusfriend.min.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'kakao-js-sdk'));
+</script>
+<div id="plusfriend-add-button" data-plusfriend-id="_xcLqmC" data-size="small" data-color="yellow" data-shape="round" data-support-multiple-densities="true"></div>
