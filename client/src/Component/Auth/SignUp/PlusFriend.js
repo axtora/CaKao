@@ -6,7 +6,7 @@ class PlusFriend extends Component {
     return (
       <>
         <b className="content__title">플러스 친구를 해주세요.</b>
-        <div className="content__form mt-1">
+        <div className="content__form mt-1 text-center">
           <FriendAddButton />
         </div> 
       </>
