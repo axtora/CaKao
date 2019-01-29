@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import KaKaoID from './SignUp/KaKaoID';
 import PassWord from './SignUp/Password';
 import Link from './SignUp/Link';
-import Tag from './SignUp/Tag';
+import Tag from './SignUp/Tag'; 
 import FriendButton from './SignUp/PlusFriend';
 import './Auth.css';
 
 class Auth extends Component {
+
   render() {
-    const { index } = this.props;
+    const { index, id, pwd, link, tag } = this.props;
     
     return (
       <div className="content">
@@ -17,16 +18,16 @@ class Auth extends Component {
           index === 1 && <KaKaoID index={index}/>
         }
         {
-          index === 2 && <PassWord index={index} />
+          index === 2 && <PassWord index={index} id={id}/>
         }
         {
-          index === 3 && <Link index={index} />
+          index === 3 && <Link index={index} id={id} pwd={pwd}/>
         }
         {
-          index === 4 && <Tag index={index} />
+          index === 4 && <Tag index={index} id={id} pwd={pwd} link={link}/>
         }
         {
-          index === 5 && <FriendButton index={index} />
+          index === 5 && <FriendButton id={id} pwd={pwd} link={link} tag={tag} />
         }
         </div>
       </div>

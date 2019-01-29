@@ -28,26 +28,43 @@ class PassWord extends Component {
     })
   }
 
+  
+  onClickEvent = () => {
+    if (this.state.password === '') {
+      window.alert('공백은 입력 할 수 없습니다.')
+    } else {
+      this.setState(
+        ({ index }) => ({
+          index: index + 1
+        })
+      )
+    }
+  }
+
   render() {
-    const { index } = this.state;
+    const { password, index } = this.state;
+    const { id } = this.props;
 
     const passwordComponent = (
       <div className="content__form">
         <TextField 
           name="password"
-          label="패스워드를 입력"
+          label="CaKao에서 사용할 패스워드를 입력"
           value={this.state.password}
           onChange={this.handleChange}
           onKeyPress={this.enterEvent}
           margin="normal"
           type="password"
         />            
+        <div className="text-center mt-0-3 next" onClick={this.onClickEvent}>
+          <span>다음</span>
+        </div>        
       </div>
     )
     return (
       <>
         {
-          index === 3 ? <Auth index={index} /> : passwordComponent
+          index === 3 ? <Auth index={index} id={id} pwd={password} /> : passwordComponent
         }
       </>
     )

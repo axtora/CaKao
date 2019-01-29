@@ -6,6 +6,7 @@ class Main extends Component {
   render() {
     return (
       <>
+        <Header />
         <Auth index={1} />
       </>
     )

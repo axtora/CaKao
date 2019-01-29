@@ -23,7 +23,7 @@ function Header(props) {
   const { classes } = props;
   return (
     <header className={classes.root}>
-      <AppBar position='static' style={{backgroundColor: '#2196f3'}}>
+      <AppBar position='static' style={{backgroundColor: '#2c3e50'}}>
         <ToolBar>
           <Typography veriant="h1" color="inherit" className={classes.grow}>
             CaKao
