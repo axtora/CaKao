@@ -7,7 +7,7 @@ var logger = require('morgan');
 var app = express();
 
 const IndexRouter = require('./routes/index');
-const UserRouter = require('./routes/user');
+const UserRouter = require('./routes/auth');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'client/build')))
 
 app.use('/index', IndexRouter);
-app.use('/user', UserRouter);
+app.use('/auth', UserRouter);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'))

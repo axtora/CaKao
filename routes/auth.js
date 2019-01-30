@@ -25,7 +25,8 @@ const successRes = (res, message, receives) => {
   });
 }
 
-router.post('/auth/signup', function(req, res) {
+router.post('/signup', function(req, res) {
+  console.log('test', req.body)
   const id = req.body.kakao_id;
   let password = req.body.password;
   const url = req.body.url;
@@ -48,7 +49,7 @@ router.post('/auth/signup', function(req, res) {
     if (!created) {
       return errorRes(res, 412, 'User ID duplicated.', receives)
     }
-    
+
     Important.findOrCreate({
       where: {
         userId: id
@@ -64,7 +65,7 @@ router.post('/auth/signup', function(req, res) {
   })
 });
 
-router.post('/auth/signin', function(req, res) { 
+router.post('/signin', function(req, res) { 
   const id = req.body.kakao_id;
   let password = req.body.password;
 
