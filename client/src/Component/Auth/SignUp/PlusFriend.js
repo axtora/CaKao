@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FriendAddButton from '../../Kako/FriendAddButton';
-import Auth from '../Auth';
+import axios from 'axios';
 
 class PlusFriend extends Component {
   state = {
@@ -19,6 +19,24 @@ class PlusFriend extends Component {
     const { index } = this.state;
     const { id, pwd, link, tag } = this.props;
 
+    const onClickJoin = () => {
+      axios.post('/auth/signup', {
+        id: id,
+        password: pwd,
+        link: link,
+        tag: tag,
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+    }
+
+
+    index === 1 && console.log(id, pwd, link, tag)
+
     const addFriendComponent = (
       <div>
         <b className="content__title">플러스 친구를 해주세요.</b>
@@ -31,10 +49,15 @@ class PlusFriend extends Component {
     const SendCaKaoSignUpData = (
       <div>
         <div className="text-center next mt-1">
-          <span>가입요청</span>
+          <span onClick={onClickJoin}>가입요청</span>
         </div>
+        <form >
+
+        </form>
       </div>
     )
+
+
     
     return (
       <>
