@@ -21,9 +21,9 @@ class PlusFriend extends Component {
 
     const onClickJoin = () => {
       axios.post('/auth/signup', {
-        id: id,
+        kakao_id: id,
         password: pwd,
-        link: link,
+        url: link,
         tag: tag,
       })
       .then(res => {

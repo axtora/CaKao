@@ -48,7 +48,7 @@ class KaKaoID extends Component {
         <div className="content__form">
         <TextField 
           name="kakao_id"
-          label="카카오톡 ID를 입력"
+          label="카카오톡 ID를 입력하세요"
           value={this.state.kakao_id}
           onChange={this.handleChange}
           onKeyPress={this.enterEvent}

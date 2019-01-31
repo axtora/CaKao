@@ -32,7 +32,7 @@ router.post('/signup', function(req, res) {
   const url = req.body.url;
   const tag = req.body.tag;
 
-  const receives = { id, url, tag};
+  const receives = { id, url, tag };
 
   if (!id || !password || !url || !tag) {
     return errorRes(res, 400, 'Some parameters are lost.', receives);
@@ -42,27 +42,27 @@ router.post('/signup', function(req, res) {
   
   User.findOrCreate({
     where: {
-      user_id: id
+      userID: id
     },
     defaults: { password }
   }).spread((user, created) => {
     if (!created) {
       return errorRes(res, 412, 'User ID duplicated.', receives)
     }
-
-    Important.findOrCreate({
-      where: {
-        userId: id
-      },
-      defaults: { url, tag}
-    }).spread((user, created) => {
-      if (!created) {
-        return errorRes(res, 412, 'User ID duplicated.', receives)
-      }
-    })
-    
-    return successRes(res, 'a user successfully created.', receives) 
   })
+
+  Important.findOrCreate({
+    where: {
+      userID: id
+    },
+    defaults: { url, tag }
+  }).spread((user, created) => {
+    if (!created) {
+      return errorRes(res, 412, 'User ID duplicated.', receives)
+    }
+  })
+
+  return successRes(res, 'a user successfully created.', receives) 
 });
 
 router.post('/signin', function(req, res) { 
@@ -72,14 +72,14 @@ router.post('/signin', function(req, res) {
   const receives = { id };
 
   if (!id || !password) {
-    return errorRes(res, 400, '일부 매개 변수가 손실됩니다.', receives);
+    return errorRes(res, 400, 'Some parameters are lost.', receives);
   }
 
   password = crypto.createHash('sha512').update(password).digest('hex');
 
   User.findOne({
     where: {
-      user_id: id,
+      userID: id,
       password
     }
   }).then(user => {

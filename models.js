@@ -14,7 +14,7 @@ const sequelize = new Sequelize('cakao', 'root', 'aa010411', {
 });
 
 const User = sequelize.define('user', {
-  user_id: {
+  userID: {
     type: Sequelize.STRING,
   },
   password: {
