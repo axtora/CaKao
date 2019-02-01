@@ -43,14 +43,14 @@ class PassWord extends Component {
 
   render() {
     const { password, index } = this.state;
-    const { id } = this.props;
+    const { id, label } = this.props;
 
     const passwordComponent = (
       <div className="content__form">
         <TextField 
           name="password"
-          label="CaKao에서 사용할 패스워드를 입력"
-          value={this.state.password}
+          label={label}
+          value={password}
           onChange={this.handleChange}
           onKeyPress={this.enterEvent}
           margin="normal"
