@@ -9,25 +9,13 @@ import './Auth.css';
 class Auth extends Component {
 
   render() {
-    const { index, id, pwd, link, tag } = this.props;
+    const { index } = this.props;
     
     return (
       <div className="content">
         <div className="content__form">
         {
           index === 1 && <KaKaoID index={index}/>
-        }
-        {
-          index === 2 && <PassWord index={index} id={id} label={'CaKao에서 사용할 패스워드를 입력'}/>
-        }
-        {
-          index === 3 && <Link index={index} id={id} pwd={pwd}/>
-        }
-        {
-          index === 4 && <Tag index={index} id={id} pwd={pwd} link={link}/>
-        }
-        {
-          index === 5 && <FriendButton id={id} pwd={pwd} link={link} tag={tag} />
         }
         </div>
       </div>
